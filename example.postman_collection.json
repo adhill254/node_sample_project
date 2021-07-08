@@ -1,0 +1,655 @@
+{
+	"info": {
+		"_postman_id": "3e975316-6f89-4a90-a17b-f8bf1dba7082",
+		"name": "example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Character - Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/character",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"character"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Character - Get All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f8-XBI/CtsYOqb6fWmCV1inr/JdUNk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 21:04:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"characterId\": 1,\n        \"name\": \"Tony\",\n        \"class\": \"Barbarian\",\n        \"level\": 4\n    },\n    {\n        \"characterId\": 2,\n        \"name\": \"Alex\",\n        \"class\": \"Wizard\",\n        \"level\": 6\n    },\n    {\n        \"characterId\": 3,\n        \"name\": \"Meghan\",\n        \"class\": \"Sorcerer\",\n        \"level\": 17\n    },\n    {\n        \"characterId\": 4,\n        \"name\": \"Michelle\",\n        \"class\": \"Bard\",\n        \"level\": 19\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Character - Get By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/character/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"character",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Character - Get By Id - Fail - IdNotFound",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character/9999999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character",
+								"9999999"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5f-WO+HyB0huHAHyPO0Dcn9419bWM4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 21:25:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"IdNotFound\",\n    \"statusCode\": 400,\n    \"message\": \"A character with id '9999999' was not found.\"\n}"
+				},
+				{
+					"name": "Character - Get By Id - Fail - Validation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character/chicken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character",
+								"chicken"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d1-DxFit5DLJPjo9fg6rG98UY3ZGks\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 21:20:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"ValidationError\",\n    \"statusCode\": 400,\n    \"message\": \"\",\n    \"isJoi\": true,\n    \"details\": [\n        {\n            \"message\": \"\\\"value\\\" must be a number\",\n            \"path\": [],\n            \"type\": \"number.base\",\n            \"context\": {\n                \"value\": null,\n                \"label\": \"value\"\n            }\n        }\n    ],\n    \"_object\": null\n}"
+				},
+				{
+					"name": "Character - Get By Id - Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-Ic7R58LksRZZsnniyr8HuH5M6iQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 21:20:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"characterId\": 3,\n        \"name\": \"Meghan\",\n        \"class\": \"Sorcerer\",\n        \"level\": 17\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Character - create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Michael\",\n\t\"class\": \"Brother\",\n\t\"level\": 8\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/character",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"character"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Character - create - Fail - ValidationError",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Tommy\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "225"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e1-/Cm4fi2ArC61FTB0RV575jt4udE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 22:41:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"ValidationError\",\n    \"statusCode\": 400,\n    \"message\": \"\",\n    \"isJoi\": true,\n    \"details\": [\n        {\n            \"message\": \"\\\"class\\\" is required\",\n            \"path\": [\n                \"class\"\n            ],\n            \"type\": \"any.required\",\n            \"context\": {\n                \"key\": \"class\",\n                \"label\": \"class\"\n            }\n        }\n    ],\n    \"_object\": {\n        \"name\": \"Tommy\"\n    }\n}"
+				},
+				{
+					"name": "Character - create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Tommy\",\n\t\"class\": \"Fighter\",\n\t\"level\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8-eE+TghVu0lqfC5QQKmjMzwJAx2U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 22:40:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7\n}"
+				}
+			]
+		},
+		{
+			"name": "Character - update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"class\": \"Girlfriend\",\n\t\"level\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/character/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"character",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Character - update - Fail - ValidationError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"class\": \"Girlfriend\",\n\t\"level\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "265"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"109-w3x1lOWoWJie6D8NzLw0EfQgf2I\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 22:54:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"ValidationError\",\n    \"statusCode\": 400,\n    \"message\": \"\",\n    \"isJoi\": true,\n    \"details\": [\n        {\n            \"message\": \"\\\"characterId\\\" is required\",\n            \"path\": [\n                \"characterId\"\n            ],\n            \"type\": \"any.required\",\n            \"context\": {\n                \"key\": \"characterId\",\n                \"label\": \"characterId\"\n            }\n        }\n    ],\n    \"_object\": {\n        \"class\": \"Girlfriend\",\n        \"level\": 2\n    }\n}"
+				},
+				{
+					"name": "Character - update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"characterId\": 3,\n\t\"class\": \"Girlfriend\",\n\t\"level\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 22:48:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Character - delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/character/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"character",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Character - delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/character/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"character",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2019 22:55:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
